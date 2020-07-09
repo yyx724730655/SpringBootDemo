@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 //不同点：@EnableEurekaClient只适用于Eureka作为注册中心，而@EnableDiscoveryClient可以是其他注册中心；
 @EnableEurekaClient
 //表示开启Fegin客户端
-@EnableFeignClients
+//@EnableFeignClients
 public class SpringbootdemoProductApplication {
 
     public static void main(String[] args) {
