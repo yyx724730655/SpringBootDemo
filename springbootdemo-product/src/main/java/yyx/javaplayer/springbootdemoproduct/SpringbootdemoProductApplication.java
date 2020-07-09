@@ -21,9 +21,4 @@ public class SpringbootdemoProductApplication {
         SpringApplication.run(SpringbootdemoProductApplication.class, args);
     }
 
-    @LoadBalanced
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
 }

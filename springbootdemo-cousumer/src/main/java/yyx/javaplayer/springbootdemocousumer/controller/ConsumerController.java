@@ -13,16 +13,13 @@ public class ConsumerController {
     @Autowired
     private ConsumerService consumerService;
 
-    //@Autowired
-    //private ProductService productService;
-
     @Autowired
-    RestTemplate restTemplate;
+    private ProductService productService;
+
 
     @RequestMapping("test")
     public String test(){
-        //String result=productService.testProductService();
-        String result=restTemplate.getForObject("http://product-server/product/productController/test", String.class);
+        String result=productService.testProductService();
         System.out.println("测试consumerservice的方法"+result);
         return "nice consumerController.test()";
     }

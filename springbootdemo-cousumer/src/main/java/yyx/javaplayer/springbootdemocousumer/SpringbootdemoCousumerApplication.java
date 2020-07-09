@@ -19,9 +19,4 @@ public class SpringbootdemoCousumerApplication {
         SpringApplication.run(SpringbootdemoCousumerApplication.class, args);
     }
 
-    @LoadBalanced
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
 }
