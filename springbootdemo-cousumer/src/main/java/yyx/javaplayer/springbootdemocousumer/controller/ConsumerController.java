@@ -3,23 +3,24 @@ package yyx.javaplayer.springbootdemocousumer.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import yyx.javaplayer.springbootdemocousumer.service.ConsumerService;
+import yyx.javaplayer.springbootdemoapi.api.ConsumerApi;
+import yyx.javaplayer.springbootdemoapi.api.ProductApi;
 
 @RestController
 @RequestMapping("/consumerController")
 public class ConsumerController {
 
     @Autowired
-    private ConsumerService consumerService;
+    private ConsumerApi consumerService;
 
     @Autowired
-    private ProductService productService;
+    private ProductApi productService;
 
 
     @RequestMapping("test")
     public String test(){
         String result=productService.testProductService();
+        //String result=consumerService.testConsumerService();
         System.out.println("测试consumerservice的方法"+result);
         return "nice consumerController.test()";
     }

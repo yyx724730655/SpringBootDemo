@@ -5,7 +5,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>springbootdemo-common</module>
+        <module>springbootdemo-api</module>
+        <module>springbootdemo-product</module>
+        <module>springbootdemo-cousumer</module>
     </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -70,13 +74,13 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

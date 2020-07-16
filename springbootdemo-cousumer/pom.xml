@@ -6,13 +6,14 @@
         <groupId>yyx.JavaPlayer</groupId>
         <artifactId>springbootdemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!-- <relativePath/>  lookup parent from repository -->
     </parent>
     <groupId>yyx.JavaPlayer</groupId>
     <artifactId>springbootdemo-cousumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springbootdemo-cousumer</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -43,6 +44,13 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--引入公共Api模块-->
+        <dependency>
+            <groupId>yyx.JavaPlayer</groupId>
+            <artifactId>springbootdemo-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

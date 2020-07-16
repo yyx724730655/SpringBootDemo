@@ -11,7 +11,8 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"yyx.javaplayer.springbootdemoapi.api"})
+//@EnableFeignClients
 @EnableDiscoveryClient
 public class SpringbootdemoCousumerApplication {
 

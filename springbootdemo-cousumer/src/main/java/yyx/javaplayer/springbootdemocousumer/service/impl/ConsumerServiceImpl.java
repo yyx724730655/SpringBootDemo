@@ -1,8 +1,10 @@
 package yyx.javaplayer.springbootdemocousumer.service.impl;
 
-import yyx.javaplayer.springbootdemocousumer.service.ConsumerService;
+import org.springframework.stereotype.Service;
+import yyx.javaplayer.springbootdemoapi.api.ConsumerApi;
 
-public class ConsumerServiceImpl implements ConsumerService {
+@Service
+public class ConsumerServiceImpl implements ConsumerApi {
 
     @Override
     public String testConsumerService() {

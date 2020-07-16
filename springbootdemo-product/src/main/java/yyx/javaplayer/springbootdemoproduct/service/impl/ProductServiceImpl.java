@@ -1,11 +1,14 @@
 package yyx.javaplayer.springbootdemoproduct.service.impl;
 
 import org.springframework.stereotype.Service;
-import yyx.javaplayer.springbootdemoproduct.service.ProductService;
+import yyx.javaplayer.springbootdemoapi.api.ProductApi;
 
-public class ProductServiceImpl implements ProductService {
+@Service
+//@RequestMapping("/productService")
+public class ProductServiceImpl implements ProductApi {
 
     @Override
+    //@RequestMapping("testProductService")
     public String testProductService() {
         return "nice ProductService.testProductService()";
     }
