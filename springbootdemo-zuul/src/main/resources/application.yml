@@ -1,0 +1,44 @@
+server:
+  port: 7099
+spring:
+  application:
+    name: zuul-server
+# 配置Eureka地址
+eureka:
+  client:
+    service-url:
+      #defaultZone 这个是不会提示的，此处需要自己写
+      #实际上属性应该是service-url,这个属性是个map（key-value）格式；当key是defaultZone的时候才能被解析；所以这里没有提示，
+      #但是自己还需要写一个defaultZone；
+      defaultZone: http://localhost:5060/eureka/eureka
+# 构建路由地址
+zuul:
+  routes:
+  # 这里可以自定义
+    consumer-server:
+      # 匹配的路由规则
+      path: /consumer/**
+      # 路由的目标服务名
+      serviceId: consumer-server
+      # 将指定路由的敏感头设置为空（默认包括cookie,set-Cookie,authorization三个属性），这里是局部设置
+      sensitiveHeaders:
+    product-server:
+      path: /product/**
+      serviceId: product-server
+      sensitiveHeaders:
+  #不路由demo2开头的任意请求
+  ignored-patterns: /demo2/**
+  #路由前缀
+  prefix: /api
+  #允许敏感头（默认包括cookie,set-Cookie,authorization三个属性），设置为空就行了，这里是全局配置
+  sensitive-headers:
+
+# 关闭使用eureka负载路由（不使用Eureka负载路由的情形下使用）
+#ribbon:
+#  eureka:
+#    enabled: false
+# 如果不使用eureka的话，需要自己定义路由的那个服务的其他负载服务
+#demo:
+#  ribbon:
+#    # 这里写你要路由的demo服务的所有负载服务请求地址，本项目只启动一个，因此只写一个
+#    listOfServers: http://localhost:8090/
