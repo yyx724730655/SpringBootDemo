@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"yyx.javaplayer.springbootdemocousumer","yyx.javaplayer.springbootdemoapi.hystrixImpl"})
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"yyx.javaplayer.springbootdemoapi.api"})
 //@EnableFeignClients

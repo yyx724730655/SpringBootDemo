@@ -12,3 +12,7 @@ eureka:
       #实际上属性应该是service-url,这个属性是个map（key-value）格式；当key是defaultZone的时候才能被解析；所以这里没有提示，
       #但是自己还需要写一个defaultZone；
       defaultZone: http://localhost:5060/eureka/eureka
+#feign熔断器开关
+feign:
+  hystrix:
+    enabled: true
